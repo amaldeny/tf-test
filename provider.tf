@@ -20,9 +20,4 @@ terraform {
       version = "3.66.1"
     }
   }
-
-  backend "gcs" {
-    bucket = "amal-tfstate"
-    prefix = "inf1"
-  }
 }

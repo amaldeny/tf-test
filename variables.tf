@@ -9,4 +9,3 @@ variable "region1" {
 variable "vpc_name" {
   description = "The name of VPC which will be created"
 }
-

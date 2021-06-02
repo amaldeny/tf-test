@@ -13,7 +13,7 @@ resource "google_compute_network" "vpc_network" {
 
   },
   {
-  subnet_name   = "${local.subnet_01}"
+  subnet_name   = "${local.subnet_02}"
   subnet_ip     = "10.10.20.0/24"
   subnet_region = "asia-southeast1"
 

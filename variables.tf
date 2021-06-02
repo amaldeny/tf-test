@@ -9,3 +9,18 @@ variable "region1" {
 variable "vpc_name" {
   description = "The name of VPC which will be created"
 }
+
+variable "sub_cidr" {
+  type    = list
+  default = []
+}
+
+variable "sub_region" {
+  type    = list
+  default = []
+}
+
+variable "sub_name" {
+  type    = list
+  default = []
+}

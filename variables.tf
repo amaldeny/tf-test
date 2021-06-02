@@ -11,16 +11,16 @@ variable "vpc_name" {
 }
 
 variable "sub_cidr" {
-  type    = "list"
+  type    = list
   default = []
 }
 
 variable "sub_region" {
-  type    = "list"
+  type    = list
   default = []
 }
 
 variable "sub_name" {
-  type    = "list"
+  type    = list
   default = []
 }

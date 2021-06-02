@@ -4,19 +4,13 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = false
   mtu                     = 1460
   routing_mode            = "REGIONAL"
-
-  subnets = [
-  {
-  subnet_name   = "${local.subnet_01}"
-  subnet_ip     = "10.10.10.0/24"
-  subnet_region = "asia-south1"
-
-  },
-  {
-  subnet_name   = "${local.subnet_02}"
-  subnet_ip     = "10.10.20.0/24"
-  subnet_region = "asia-southeast1"
+}
+  resource "google_compute_subnetwork" "subnet1" {
+  count          = "${length(var.sub_cidr)}"
+  name           = "${var.sub_name[count.index]}"
+  ip_cidr_range  = "${var.sub_cidr[count.index]}"
+  region         = "${var.sub_region[count.index]}"
+  network        = google_compute_network.vpc_network.id
 
   }
-  ]
-}
+  

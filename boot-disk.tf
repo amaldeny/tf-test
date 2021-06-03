@@ -1,5 +1,5 @@
 resource "google_compute_disk" "bdisk_dev" {
-count    = 2
+count    = "${length(var.sub_cidr)}"
 name     = join("", ["web-dev-", count.index + 1, "-bdisk" ])
 type     = "${var.disk_type}"
 zone     = "${var.disk_zone}"
